@@ -1,0 +1,31 @@
+import requests
+
+import json
+
+target = input("Sorgulanacak İp Adresi > ")
+
+r = requests.get("http://ip-api.com/json/"+target)
+
+ipt = json.loads(r.text)
+
+if ipt['status'] in 'success':
+
+ print("[!] Bilgiler")
+
+ print("Country : "+ipt["country"])
+
+ print("Country Code : "+ipt["countryCode"])
+
+ print("Region : "+ipt["region"])
+
+ print("Region Name : "+ipt["regionName"])
+
+ print("City : "+ipt["city"])
+
+ print("ISP : "+ipt["isp"])
+
+ print("Query : "+ipt["query"])
+
+else:
+
+ print("Başarısız Oldu...")
