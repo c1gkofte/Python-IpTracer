@@ -1,5 +1,4 @@
 import requests
-
 import json
 
 target = input("Sorgulanacak İp Adresi > ")
